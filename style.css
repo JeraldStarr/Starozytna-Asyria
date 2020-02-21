@@ -235,6 +235,10 @@ h2 + hr {
 	margin-left: 0;
 }
 
+#menu button {
+	display: none;
+}
+
 
 
 /* ========== obrazy ========== */
@@ -325,11 +329,47 @@ figcaption {
 */
 
 /* ============ style dla strony responsywnej ============ */
+@media (max-width: 700px) {
+	#menu button {
+		display: block;
+		width: 40px;
+		height: 35px;
+		border: 0;
+		border-top: 5px solid white;
+		background: transparent;
+		position: relative;
+		transition: 0.3s transform linear; 
+	}
+	#menu button::after, #menu button::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transform: translateY(10px);
+		border-top: 5px solid white;
+
+	} 
+	#menu button::after {
+		transform: translateY(25px);
+		transition: 0.3s transform linear;
+	}
+
+	#menu button:focus {
+		transform: rotate(45deg) translateY(5px);
+		border: none;
+	}
+
+	#menu button:focus::after {
+		transform: rotate(-90deg) translate(-10px);
+	}
+} 
+
 
 @media (min-width: 481px) and (max-width: 700px) {
 	.option {
 	float: none;
-	display: inline-block;
+	display: none ;
 	text-align: center;
 	border: none;
 	}
@@ -347,7 +387,7 @@ figcaption {
 	}
 
 	#menu {
-	height: auto;
+	height: 35px;
 	}
 	
 	#contain {
@@ -392,9 +432,13 @@ figcaption {
 	width: 50%;
 	border: 1px solid red;
 	}
+
 }
 @media (min-width: 365px) and (max-width: 480px) {
 	.option {
+		display: none;
+	}
+	/* .option {
 	float: none;
 	display: inline-block;
 	text-align: center;
@@ -415,7 +459,7 @@ figcaption {
 
 	#menu {
 	height: auto;
-	}
+	} */
 	
 	#contain {
 	padding: 20px 3% 30px 3% ;
@@ -458,13 +502,15 @@ figcaption {
 	width: 100%;
 	border: 1px solid red;
 	}
-
 }
 
 
 
 @media (max-width: 364px) {
 	.option {
+		display: none;
+	}
+	/* .option {
 	float: none;
 	display: inline-block;
 	text-align: center;
@@ -486,7 +532,7 @@ figcaption {
 
 	#menu {
 	height: auto;
-	}
+	} */
 	
 	#contain {
 	padding: 30px 4% 40px 4% ;

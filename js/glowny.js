@@ -1,5 +1,14 @@
 window.addEventListener("load", displayMenuBar, false);
 
+function createHamburgerButton() {
+	const menuBar = document.getElementById("menu");
+	console.log(menuBar);
+	const button = document.createElement("button");
+	menuBar.appendChild(button);
+}
+
+createHamburgerButton();
+
 function fillWebsite() {
 
 	var footerElementInnerHTML = [
