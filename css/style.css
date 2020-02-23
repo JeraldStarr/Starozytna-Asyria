@@ -1,0 +1,307 @@
+@import "images.css";
+@import "links.css";
+@import "menu.css";
+@import "header.css";
+@import "printer.css";
+
+
+html, body {
+	background: linear-gradient(to bottom, #6C5651 0%, #35312F 100%);
+	font-family: 'Lato', sans-serif;
+}
+
+
+#container {
+	width: auto;
+	max-width: 1000px;
+	background: linear-gradient(to right bottom, #1C1615 0%, black 100%);
+	font-size: 14px;
+	padding: 3px;
+	box-shadow: 55px 55px 70px 55px rgba(0,0,0,.7);
+	margin: 0 auto;
+}
+
+#contain {
+	width: 80%;
+	/*background: linear-gradient(to right bottom, #1C1615 0%, black 100%);*/
+	text-align: justify;
+	padding-right: 10%;
+	padding-left: 10%;
+	padding-bottom: 100px;
+	padding-top: 40px;
+	color: lightgray;
+}
+
+#contain h1 {
+	margin-left: 5.5%;
+	margin-bottom: 0;
+	letter-spacing: 2px;
+}
+
+#contain p {
+	margin: 10px 15px 10px;
+	line-height: 170%;
+}
+
+#bottom {
+	clear: both;
+	width: auto;
+	color: #FFFFCC;
+	padding-bottom: 20px;
+}
+
+#bottom div {
+	margin-left: 10%;
+}
+
+.znakWodny {
+	width: 12%;
+	display: block;
+	margin: 0 auto 55px;
+}
+
+.znakWodny:last-of-type {
+	margin: 75px auto 0;
+}
+
+
+.podkreslenie {margin-bottom: 45px;}
+
+
+
+/*blok na dole artykulu, w ktorym zawarte sa inforamcje o zrodlach oraz 
+dacie utworzenia, a także dacie ostatniej aktualizacji*/
+.datyZrodla {
+	font-style: italic;
+	font-size: 9px;
+	margin-top: 60px;
+}
+
+.datyZrodla a {
+	background: url('img/globe.png') no-repeat;
+	background-position: right center;
+	padding: 0 30px 0 0;
+}
+
+.datyZrodla div {	
+	letter-spacing: 2px;
+}
+
+.datyZrodla p {
+	letter-spacing: 1px;
+	text-decoration: underline;
+}
+
+.goraStrony {
+	margin: 30px auto 0;
+	max-width: 10%;
+}
+
+address {
+	font-size: 10px;
+	text-align: center;
+	padding: 25px;
+}
+
+
+
+p.wstep {
+	color:rgb(195,151,51);
+	line-height: 145%;
+	padding-bottom: 40px;
+	font-size: 16px;
+}
+
+h2 {
+		margin-top: 75px;
+	}
+
+.inscription {
+		padding: 7% 15%;
+		font-style: italic;
+		line-height: 150%;
+	}
+
+.articleContent {
+		min-width: 25%;
+		background: #C7D4D9;
+		border: 2px solid white;
+		color: black;
+		transition: box-shadow .8s ease-in-out 10ms, border .8s ease-in-out 10ms;
+	}
+	
+.articleContent:hover {
+		border: 2px solid #f4ce42;
+		box-shadow: -1px -1px 128px 3px #f4ce42,
+					        -1px -1px 214px -33px white;
+}
+
+.articleContent a {
+		color: black;
+	}
+
+.articleContent li {
+		list-style-type: circle;
+		line-height: 160%
+	}
+
+.articleContent strong {
+		display: block;
+		font-size: 18px;
+		margin: 12%;
+	}
+
+.articleContent ul {
+		margin-bottom: 35px;
+	}
+
+h2 + hr {
+	width: 40%;
+	border: 1px solid red;
+	margin-left: 0;
+}
+
+/*
+	style dla etykietek
+*/
+
+	.outside {
+		background-color: #FAFACD;
+		width: 400px;
+		min-height: 90px;
+		opacity: 0.9;
+	}
+
+	.outside img {
+		padding: 5% 2%;
+		float: left;
+	}
+
+	.outside p {
+		padding: 2%; 
+		text-align: center;
+		display: block;
+		float: right;
+		margin-top: 7px;
+	}
+
+	.outside span {
+		font-size: 11px;
+	}
+
+	.outside strong {
+		display: block;
+		font-size: 17px;	
+	}
+/*
+	koniec styli dla etykietek
+*/
+
+/* ============ style dla strony responsywnej ============ */
+
+@media (min-width: 481px) and (max-width: 700px) {	
+	#contain {
+		padding: 30px 4% 40px 4% ;
+		width: 92%;
+	}
+
+	.plywaPrawo {
+		float: right;
+		margin-right: 0.4%;
+	}
+
+	.plywaLewo {
+		float: left;
+		margin-left: 0.4%;
+	}
+
+
+	#bottom div {
+		margin-left: 4%;
+	}
+
+	.articleContent {
+		min-width: 25%;
+		padding-right: 10%;
+	}
+
+
+	h2 + hr {
+		width: 50%;
+		border: 1px solid red;
+	}
+
+}
+@media (min-width: 365px) and (max-width: 480px) {
+	
+	#contain {
+		padding: 20px 3% 30px 3% ;
+		width: 94%;
+	}
+
+	.plywaPrawo {
+		float: right;
+		margin-right: 0.6%;
+ 	}
+
+ 	.plywaLewo {
+		float: left;
+		margin-left: 0.6%;
+ 	}
+
+	#bottom div {
+		margin-left: 2%;
+	}
+
+	.articleContent {
+		min-width: 40%;
+		padding-right: 10%;
+	}
+
+
+	h2 + hr {
+		width: 100%;
+		border: 1px solid red;
+	}
+}
+
+
+
+@media (max-width: 364px) {
+	.option {
+		display: none;
+	}
+
+	#contain {
+		padding: 30px 4% 40px 4% ;
+		width: 92%;
+	}
+
+	.plywaPrawo {
+		float: right;
+		margin-right: 0.8%;
+	}
+
+	.plywaLewo {
+		float: left;
+		margin-left: 0.8%;
+	}
+	
+
+	#bottom div {
+		margin-left: 3%;
+	}
+
+	.articleContent {
+		min-width: 95%;
+	}
+
+	h2 + hr {
+		width: 100%;
+		border: 1px solid red;
+	}
+}
+
+/* ============ koniec styli dla strony responsywnej ============ */
+
+

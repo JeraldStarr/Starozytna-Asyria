@@ -1,0 +1,18 @@
+#top {
+	background-image:url('../img/przod.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#top span {
+	font-size: 10px;
+	display: block;
+	padding: 4% 25% 22% 51%;
+	opacity: 0;
+}
+
+@media (max-width: 364px) {
+    #top {
+		background-image: url('../img/przod_320px.jpg');
+	}
+}
