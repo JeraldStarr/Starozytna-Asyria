@@ -1,77 +1,36 @@
-window.addEventListener("load", displayMenuBar, false);
+// window.addEventListener("load", displayMenuBar, false);
 
-function createHamburgerButton() {
-	const menuBar = document.getElementById("menu");
-	console.log(menuBar);
-	const button = document.createElement("button");
-	menuBar.appendChild(button);
-}
+// const footerElementInnerHTML = [
+// 	"mapa strony",
+// 	"linki",
+// 	"kontakt",
+// 	"księga gości"
+// ];
 
-createHamburgerButton();
+// const footerLinks = [
+// 	"mapa-strony.html",
+// 	"linki.html",
+// 	"kontakt.html",
+// 	"http://net3.pl/uslugi/ksiega.php?p_user=sitnikl1&p_nrksiegi=1"
+// ];
 
 function fillWebsite() {
 
-	var footerElementInnerHTML = [
-		"mapa strony",
-		"linki",
-		"kontakt",
-		"księga gości"
-	];
 
-	var footerLinks = [
-		"mapa-strony.html",
-		"linki.html",
-		"kontakt.html",
-		"http://net3.pl/uslugi/ksiega.php?p_user=sitnikl1&p_nrksiegi=1"
-	];
+	// var footerElement = document.getElementById("bottom");
 
-	var footerElement = document.getElementById("bottom");
-
-	for(i=0;i<footerLinks.length;i++) {
-	var divElement = document.createElement("div");
-	var aElement = document.createElement("a");
-	aElement.setAttribute("href", footerLinks[i]);
-	aElement.innerHTML = footerElementInnerHTML[i];
-	divElement.appendChild(aElement);
-	footerElement.appendChild(divElement);
-	};
+	// for(i=0;i<footerLinks.length;i++) {
+	// var divElement = document.createElement("div");
+	// var aElement = document.createElement("a");
+	// aElement.setAttribute("href", footerLinks[i]);
+	// aElement.innerHTML = footerElementInnerHTML[i];
+	// divElement.appendChild(aElement);
+	// footerElement.appendChild(divElement);
+	// };
 };
 
-function displayMenuBar() {
+// fillWebsite();
 
-	var innerHTML = [
-		"Strona Główna",
-		"Architektura",
-		"Sztuka",
-		"Miasta",
-		"Historia",
-		"Bogowie",
-		"Piśmiennictwo"
-	];
-
-	var menuUrls = [
-		"/",
-		"asyryjska-architektura.html",
-		"asyryjska-sztuka.html",
-		"asyryjskie-miasta.html",
-		"historia-asyrii.html",
-		"asyryjscy-bogowie.html",
-		"asyryjskie-pismiennictwo.html"
-	];
-	
-
-	var menuBar = document.getElementById("menu");
-	for(i=0;i<7;i++) {
-		var aElement = document.createElement("a");
-		aElement.setAttribute("href", menuUrls[i]);
-		var divElement = document.createElement("div");
-		divElement.setAttribute("class", "option");
-		divElement.appendChild(aElement);
-		aElement.innerHTML=innerHTML[i];
-		menuBar.appendChild(divElement);
-	}
-	fillWebsite();
-}
 
 $(document).ready(function() {
 	$('figure a').fancybox({
@@ -138,11 +97,11 @@ $(document).ready(function() {
 
 
 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-55459898-3', 'auto');
-  ga('send', 'pageview');
+//   ga('create', 'UA-55459898-3', 'auto');
+//   ga('send', 'pageview');
 
