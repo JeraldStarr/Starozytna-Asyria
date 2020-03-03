@@ -57,6 +57,16 @@ figcaption {
     .small {
         width: 40%;
     }
+
+    .plywaPrawo {
+		float: right;
+		margin-right: 0.4%;
+	}
+
+	.plywaLewo {
+		float: left;
+		margin-left: 0.4%;
+	}
 }
 
 @media (min-width: 365px) and (max-width: 480px) {
@@ -71,6 +81,16 @@ figcaption {
     .small {
         width: 93%;
     }
+
+    .plywaPrawo {
+		float: right;
+		margin-right: 0.6%;
+ 	}
+
+ 	.plywaLewo {
+		float: left;
+		margin-left: 0.6%;
+ 	}
 }
 
 @media (max-width: 364px) {
@@ -85,4 +105,14 @@ figcaption {
     .small {
         width: 89%;
     }
+
+    .plywaPrawo {
+		float: right;
+		margin-right: 0.8%;
+	}
+
+	.plywaLewo {
+		float: left;
+		margin-left: 0.8%;
+	}
 }

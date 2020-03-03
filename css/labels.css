@@ -1,0 +1,28 @@
+.outside {
+    background-color: #FAFACD;
+    width: 400px;
+    min-height: 90px;
+    opacity: 0.9;
+}
+
+.outside img {
+    padding: 5% 2%;
+    float: left;
+}
+
+.outside p {
+    padding: 2%; 
+    text-align: center;
+    display: block;
+    float: right;
+    margin-top: 7px;
+}
+
+.outside span {
+    font-size: 11px;
+}
+
+.outside strong {
+    display: block;
+    font-size: 17px;	
+}

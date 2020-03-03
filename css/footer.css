@@ -1,0 +1,63 @@
+#bottom {
+	clear: both;
+	width: auto;
+	color: #FFFFCC;
+	padding-bottom: 20px;
+}
+
+#bottom div {
+	margin-left: 10%;
+}
+
+/*blok na dole artykulu, w ktorym zawarte sa inforamcje o zrodlach oraz 
+dacie utworzenia, a także dacie ostatniej aktualizacji*/
+.datyZrodla {
+	font-style: italic;
+	font-size: 9px;
+	margin-top: 60px;
+}
+
+.datyZrodla a {
+	background: url('img/globe.png') no-repeat;
+	background-position: right center;
+	padding: 0 30px 0 0;
+}
+
+.datyZrodla div {	
+	letter-spacing: 2px;
+}
+
+.datyZrodla p {
+	letter-spacing: 1px;
+	text-decoration: underline;
+}
+
+.goraStrony {
+	margin: 30px auto 0;
+	max-width: 10%;
+}
+
+address {
+	font-size: 10px;
+	text-align: center;
+	padding: 25px;
+}
+
+@media (min-width: 481px) and (max-width: 700px) {	
+	#bottom div {
+		margin-left: 4%;
+    }
+}
+
+@media (min-width: 365px) and (max-width: 480px) {
+
+	#bottom div {
+		margin-left: 2%;
+    }
+}
+
+@media (max-width: 364px) {
+	#bottom div {
+		margin-left: 3%;
+    }
+}

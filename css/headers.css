@@ -1,0 +1,27 @@
+.podkreslenie {
+    margin-bottom: 45px;
+}
+
+h2 {
+	margin-top: 75px;
+}
+
+h2 + hr {
+	width: 40%;
+	border: 1px solid red;
+	margin-left: 0;
+}
+
+@media (min-width: 365px) and (max-width: 480px) {
+	h2 + hr {
+		width: 50%;
+		border: 1px solid red;
+	}
+}
+
+@media (max-width: 364px) {
+	h2 + hr {
+		width: 100%;
+		border: 1px solid red;
+	}
+}

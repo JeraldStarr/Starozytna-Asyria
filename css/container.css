@@ -1,0 +1,9 @@
+#container {
+	width: auto;
+	max-width: 1000px;
+	background: linear-gradient(to right bottom, #1C1615 0%, black 100%);
+	font-size: 14px;
+	padding: 3px;
+	box-shadow: 55px 55px 70px 55px rgba(0,0,0,.7);
+	margin: 0 auto;
+}

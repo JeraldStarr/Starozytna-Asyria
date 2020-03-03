@@ -1,0 +1,10 @@
+
+.znakWodny {
+	width: 12%;
+	display: block;
+	margin: 0 auto 55px;
+}
+
+.znakWodny:last-of-type {
+	margin: 75px auto 0;
+}
