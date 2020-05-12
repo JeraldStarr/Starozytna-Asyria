@@ -31,8 +31,6 @@ function fillWebsite() {
 
 // fillWebsite();
 
-
-$(document).ready(function() {
 	$('figure a').fancybox({
 		overlayColor: 'black',
 		overlayOpacity: .4,
@@ -43,14 +41,11 @@ $(document).ready(function() {
 		titlePosition: 'inside',	
 		cyclic: true
 	});
-}); // end ready()
 
 
 /*
 	wyświetla etykietki
 */
-
-$(document).ready(function() {
 	$('.outside').hide();
 	$('.label').mouseover(function() {
 			var ttLeft,
@@ -93,7 +88,7 @@ $(document).ready(function() {
 
 	}); // end mouseout()
 
-}); // end ready()
+
 
 
 
