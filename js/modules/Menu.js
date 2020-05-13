@@ -1,5 +1,8 @@
 
 function fillNavigationWithElements(urls, labels, id) {
+    if (!urls || typeof urls !== "object" || !labels || !id) {
+        return null;
+    }
     const navElement = document.getElementById(id);
     const navLength = labels.length;
 
