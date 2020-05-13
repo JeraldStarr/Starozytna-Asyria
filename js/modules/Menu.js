@@ -1,37 +1,36 @@
-const menu = {
-    fillNavigationElements(urls, labels, id) {
-        const navElement = document.getElementById(id);
-        const navLength = labels.length;
 
-        for (let i = 0; i < navLength; i++) {
+function fillNavigationWithElements(urls, labels, id) {
+    const navElement = document.getElementById(id);
+    const navLength = labels.length;
 
-            const aElement = this._buildANode(urls, labels, i);
-            const navSubElement = document.createElement("div");
-            this._addLinkToNavigation(navElement, navSubElement, aElement);
+    for (let i = 0; i < navLength; i++) {
 
-            if (id === "menu") {
-                this._setMainMenuLook(navSubElement);
-            }
+        const aElement = _buildANode(urls, labels, i);
+        const navSubElement = document.createElement("div");
+        _addLinkToNavigation(navElement, navSubElement, aElement);
+
+        if (id === "menu") {
+            _setMainMenuLook(navSubElement);
         }
-    },
-    _setMainMenuLook(navLink) {
-        navLink.setAttribute("class", "option");
-    },
-    createHamburgerButton() {
-        const menuBar = document.getElementById("menu");
-        const button = document.createElement("button");
-        menuBar.appendChild(button);
-    },
-    _buildANode(urls, labels, i) {
-        const node = document.createElement("a");
-        node.setAttribute("href", urls[i]);
-        node.innerText = labels[i];
-        return node;
-    },
-    _addLinkToNavigation(nav, div, a) {
-        div.appendChild(a);
-        nav.appendChild(div);
     }
 }
+function _setMainMenuLook(navLink) {
+    navLink.setAttribute("class", "option");
+}
+function createHamburgerButton() {
+    const menuBar = document.getElementById("menu");
+    const button = document.createElement("button");
+    menuBar.appendChild(button);
+}
+function _buildANode(urls, labels, i) {
+    const node = document.createElement("a");
+    node.setAttribute("href", urls[i]);
+    node.innerText = labels[i];
+    return node;
+}
+function _addLinkToNavigation(nav, div, a) {
+    div.appendChild(a);
+    nav.appendChild(div);
+}
 
-export default menu;
+export {fillNavigationWithElements};
