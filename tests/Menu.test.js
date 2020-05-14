@@ -45,18 +45,40 @@ describe("Menu module: ", () => {
             <aside id="menu"></aside>
         `;
         });
-        test("should return 7 elements of array with got classNames", () => {
+        test("should return 7 elements of array with received classNames", () => {
             fillNavigationWithElements(data.menu.menuUrls, data.menu.innerHTML, "menu");
             expect(document.getElementsByClassName("option").length).toBe(7);
         });
-        test("should return null if null parameter was provided", () => {
+        test("should return null if null was provided as 'urls' parameter", () => {
     
             expect(fillNavigationWithElements(null, data.menu.innerHTML, "menu")).toBeNull();
 
         })
-        test("should return null if not object was provided", () => {
+        test("should return null if an not object was provided as an 'urls' parameter", () => {
 
             expect(fillNavigationWithElements("URLS", data.menu.innerHTML, "menu")).toBeNull();
+
+        })
+        test("should return null if null was provided as a 'labels' parameters", () => {
+
+            expect(fillNavigationWithElements(data.menu.menuUrls, null, "menu")).toBeNull();
+
+        })
+        test("should return null if not an object was provided as an 'labels' parameter", () => {
+
+            expect(fillNavigationWithElements(data.menu.menuUrls, "LABELS", "menu")).toBeNull();
+
+        })
+        test("should return null if null was provided as an 'id' parameter", () => {
+
+            expect(fillNavigationWithElements(data.menu.menuUrls, data.menu.innerHTML, null))
+                .toBeNull();
+
+        })
+        test("should return null if not a string was provided as an 'id' parameter", () => {
+
+            expect(fillNavigationWithElements(data.menu.menuUrls, data.menu.innerHTML, {string: "string"}))
+                .toBeNull();
 
         })
     });

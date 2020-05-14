@@ -1,6 +1,9 @@
 
 function fillNavigationWithElements(urls, labels, id) {
-    if (!urls || typeof urls !== "object" || !labels || !id) {
+    const atLeastOneParameterIsNotCorrect = 
+        !urls || typeof urls !== "object" || !labels || typeof labels !== "object" || !id || typeof 
+        id !== "string";
+    if (atLeastOneParameterIsNotCorrect) {
         return null;
     }
     const navElement = document.getElementById(id);
