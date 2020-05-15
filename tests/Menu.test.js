@@ -39,6 +39,9 @@ describe("Menu module: ", () => {
         }
         
     });
+    afterAll(()=> {
+        data = {};
+    });
     describe("fillNavigationWithElements: ", () => {
         beforeEach(()=> {
             document.body.innerHTML = `
@@ -79,6 +82,14 @@ describe("Menu module: ", () => {
 
             expect(fillNavigationWithElements(data.menu.menuUrls, data.menu.innerHTML, {string: "string"}))
                 .toBeNull();
+
+        })
+        test("should return 4", () => {
+            document.body.innerHTML = `<footer id="bottom"></footer>`
+            fillNavigationWithElements(data.menu.footerLinks, 
+                data.menu.footerElementInnerHTML, "bottom");
+            expect(document.querySelectorAll("#bottom div").length)
+                .toBe(4);
 
         })
     });
