@@ -23,10 +23,12 @@ function fillNavigationWithElements(urls, labels, id) {
 function _setMainMenuLook(navLink) {
     navLink.setAttribute("class", "option");
 }
-function createHamburgerButton() {
-    const menuBar = document.getElementById("menu");
-    const button = document.createElement("button");
-    menuBar.appendChild(button);
+function createHamburgerButtonInMenu() {
+    if (window.innerWidth <= 700) {
+        const menuBar = document.getElementById("menu");
+        const button = document.createElement("button");
+        menuBar.appendChild(button);
+    }
 }
 function _buildANode(urls, labels, i) {
     const node = document.createElement("a");
@@ -39,4 +41,4 @@ function _addLinkToNavigation(nav, div, a) {
     nav.appendChild(div);
 }
 
-export {fillNavigationWithElements};
+export {fillNavigationWithElements, createHamburgerButtonInMenu};

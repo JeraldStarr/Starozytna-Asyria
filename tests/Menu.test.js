@@ -1,4 +1,4 @@
-import {fillNavigationWithElements} from "../js/modules/Menu.js";
+import {fillNavigationWithElements, createHamburgerButtonInMenu} from "../js/modules/Menu.js";
 
 describe("Menu module: ", () => {
     let data;
@@ -92,5 +92,22 @@ describe("Menu module: ", () => {
                 .toBe(4);
 
         })
+    });
+    describe("createHamburgerButtonInMenu: ", () => {
+        beforeEach(()=> {
+            document.body.innerHTML = `
+            <aside id="menu"></aside>
+        `;
+        });
+        test("should return true if 'window.innerWidth' is 700", () => {
+            window.innerWidth = 700;
+            createHamburgerButtonInMenu();
+            expect(document.querySelector("#menu button")).toBeTruthy();
+        });
+        test("should return true if 'window.innerWidth' is 701", () => {
+            window.innerWidth = 701;
+            createHamburgerButtonInMenu();
+            expect(document.querySelector("#menu button")).toBeFalsy();
+        });
     });
 })
