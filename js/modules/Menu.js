@@ -44,23 +44,29 @@ function buildHTMLForMobileMenu(urls, labels) {
 }
 function coverSite() {
     const button = document.querySelector("#menu button");
-    button.addEventListener("click", (e) => {
-        console.log(document.hasFocus());
-        document.body.classList.toggle("cover");
-        if (document.querySelector(".cover") === null) {
-            console.log("document has focus");
-            document.querySelector("#menu button").blur();
-        }
-        
-    });
+    button.addEventListener("click", _handleClickMobileMenuButton);
     const cover = document.querySelector("#cover");
     cover.addEventListener("click", (e)=> {
         console.log(e.target);
         if (document.body.classList.contains("cover")) {
             document.body.classList.remove("cover");
         }
-    }) 
-    
+    })  
+}
+function _handleClickMobileMenuButton(e) {
+    _setClassForBody("cover");
+    if (!_hasBodyClass("cover")) {
+            _blurElement("#menu button");
+    }
+}
+function _setClassForBody(cssClass) {
+    document.body.classList.toggle(cssClass);
+}
+function _hasBodyClass(cssClass) {
+    return document.querySelector(`.${cssClass}`);
+}
+function _blurElement(selector) {
+    document.querySelector(selector).blur();
 }
 function _setMainMenuLook(navLink) {
     navLink.setAttribute("class", "option");
