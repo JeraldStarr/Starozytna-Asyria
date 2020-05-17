@@ -1,73 +1,80 @@
 #menu {
-	background: linear-gradient(to bottom, #311711 0%, #1E0E0A 100%);
-	padding: 10px 0;
-	text-shadow: 5px 3px 5px #000000;
-	border-style: solid;
-	border-color: #723628 #311711 #723628;
-	height: 35px;
-	text-align: center;
+    /* background: linear-gradient(to bottom, #311711 0%, #1E0E0A 100%); */
+    padding: 1px 30px;
+    text-shadow: 5px 3px 5px #000000;
+    /* border-style: solid; */
+    /* border-color: #723628 #311711 #723628; */
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background: white; */
+    background-image: linear-gradient(to right, black 0%, gray 33%, gray 66%, #000 100%);
+    background-color: gray;
+
 }
 
-#menu:after {
-	content: "";
-	clear: both;
-	display: table;
+.option {
+    height: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 15%;
+    align-items: center;
+    transition-property: all;
+    transition-duration: 0.6s;
+    /* background: radial-gradient(ellipse, #ecbd79 0%, #a05f05 1%, #1E0E0A 86%); */
+    background-color: #000;
+
 }
-
-.option{
-	min-width: 13.7%;
-	padding: 10px 0;
-	float: left;
-	border-right: 1px solid gray;
-	border-left: 1px solid gray;
-	transition: background-color;
-	transition-duration: 0.6s;
-}
-
-.option:nth-of-type(7) {border-right: 0;}
-
-.option:nth-of-type(7):hover {border-right: 0;}
 
 .option:hover{
-    transform: scale(1.04);
-	background-color: #422018;
-	cursor: pointer;
-	box-shadow: 7px 7px 7px 7px rgba(0,0,0,.4);
-	border-right: 1px solid #311711;
-	border-left: 1px solid #311711;
-}
-
-.option:first-of-type:hover {
-	border-left: 0;
-}
-
-.option:first-of-type {
-	border-left: 0;
-	margin-left: 1%;
+    cursor: pointer;
+    filter: brightness(120%)
 }
 
 .option a:visited, .option a:link {
 	text-decoration: none;
-	color: #FFFFC2;
+	color: lightgray;
+}
+
+.option a:hover {
+    color: #fff;
 }
 
 #menu button {
     display: none;
 }   
+
+#cover {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    #menu {
+        padding: 1px 0;
+    }
+}
 @media (max-width: 700px) {
     #menu {
         height: 35px;
+        justify-content: flex-start;
+        background-image: linear-gradient(black 0%, black 100%);
+        height: 50px;
     }
     #menu button {
         display: block;
         width: 40px;
         height: 35px;
         border: 0;
-        border-top: 5px solid white;
+        border-top: 5px solid lightgray;
         background: transparent;
         position: relative;
         transition: 0.3s transform linear; 
+        z-index: 2;
     }
+
     #menu button::after, #menu button::before {
         content: "";
         position: absolute;
@@ -75,7 +82,7 @@
         left: 0;
         width: 100%;
         transform: translateY(10px);
-        border-top: 5px solid white;
+        border-top: 5px solid lightgray;
     
     } 
     #menu button::after {
@@ -90,6 +97,53 @@
     
     #menu button:focus::after {
         transform: rotate(-90deg) translate(-10px);
+    }
+
+    .cover #mobileMenu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        top: 260px;
+        width: 100%;
+        background: brown;
+        height: 279px;
+        /* background:linear-gradient(135deg,#3b3434,#000); */
+        background-image: linear-gradient(to right, #3b3434 0%, lightgray 33%, lightgray 66%, #000 100%);
+
+    }
+
+    #mobileMenu {
+        display: none;
+    }
+
+    #mobileMenu button:focus {
+        border: none;
+    }
+    #mobileMenu li {
+        background-color: black;
+        /* border-bottom:  */
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #mobileMenu a {
+        display: block;
+        color: lightgray;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cover #cover {
+        display: block;
+        position:fixed;
+        background-color: black;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
     }
 }
 

@@ -1,4 +1,3 @@
-
 function fillNavigationWithElements(urls, labels, id) {
     const atLeastOneParameterIsNotCorrect = 
         !urls || typeof urls !== "object" || !labels || typeof labels !== "object" || !id || typeof 
@@ -20,15 +19,51 @@ function fillNavigationWithElements(urls, labels, id) {
         }
     }
 }
-function _setMainMenuLook(navLink) {
-    navLink.setAttribute("class", "option");
-}
 function createHamburgerButtonInMenu() {
     if (window.innerWidth <= 700) {
         const menuBar = document.getElementById("menu");
         const button = document.createElement("button");
         menuBar.appendChild(button);
     }
+}
+function buildHTMLForMobileMenu(urls, labels) {
+    if (window.innerWidth <= 700) {
+        const nav = document.createElement("nav");
+        nav.id = "mobileMenu";
+        for (let i = 0; i < urls.length; i++) {
+            const li = document.createElement("li");
+            li.classList.add("navLink");
+            const a = document.createElement("a");
+            a.setAttribute("href", urls[i]);
+            a.innerText = labels[i];
+            li.appendChild(a);
+            nav.appendChild(li);
+        }
+        document.body.appendChild(nav);
+    }
+}
+function coverSite() {
+    const button = document.querySelector("#menu button");
+    button.addEventListener("click", (e) => {
+        console.log(document.hasFocus());
+        document.body.classList.toggle("cover");
+        if (document.querySelector(".cover") === null) {
+            console.log("document has focus");
+            document.querySelector("#menu button").blur();
+        }
+        
+    });
+    const cover = document.querySelector("#cover");
+    cover.addEventListener("click", (e)=> {
+        console.log(e.target);
+        if (document.body.classList.contains("cover")) {
+            document.body.classList.remove("cover");
+        }
+    }) 
+    
+}
+function _setMainMenuLook(navLink) {
+    navLink.setAttribute("class", "option");
 }
 function _buildANode(urls, labels, i) {
     const node = document.createElement("a");
@@ -41,4 +76,9 @@ function _addLinkToNavigation(nav, div, a) {
     nav.appendChild(div);
 }
 
-export {fillNavigationWithElements, createHamburgerButtonInMenu};
+export {
+        fillNavigationWithElements, 
+        createHamburgerButtonInMenu, 
+        buildHTMLForMobileMenu,
+        coverSite
+    };
