@@ -1,7 +1,5 @@
 function fillNavigationWithElements(urls, labels, id) {
-    const atLeastOneParameterIsNotCorrect = 
-        !urls || typeof urls !== "object" || !labels || typeof labels !== "object" || !id || typeof 
-        id !== "string";
+    const atLeastOneParameterIsNotCorrect = _checkIfProvidedParameterIsCorrect(urls, labels, id);
     if (atLeastOneParameterIsNotCorrect) {
         return null;
     }
@@ -27,6 +25,11 @@ function createHamburgerButtonInMenu() {
     }
 }
 function buildHTMLForMobileMenu(urls, labels) {
+    const atLeastOneParameterIsNotCorrect = _checkIfProvidedParameterIsCorrect(urls, labels, 
+        "mobileMenu");
+    if (atLeastOneParameterIsNotCorrect) {
+        return null;
+    }
     if (window.innerWidth <= 700) {
         const nav = document.createElement("nav");
         nav.id = "mobileMenu";
@@ -48,18 +51,16 @@ function coverSite() {
     const cover = document.querySelector("#cover");
     cover.addEventListener("click", _handleClickCoverElement)  
 }
-function _handleClickMobileMenuButton(e) {
-    _setClassForBody("cover");
+function _handleClickMobileMenuButton() {
+    _toogleClassForBody("cover");
     if (!_hasBodyClass("cover")) {
             _blurElement("#menu button");
     }
 }
 function _handleClickCoverElement() {
-    if (document.body.classList.contains("cover")) {
-        document.body.classList.remove("cover");
-    }
+    document.body.classList.toggle("cover");
 }
-function _setClassForBody(cssClass) {
+function _toogleClassForBody(cssClass) {
     document.body.classList.toggle(cssClass);
 }
 function _hasBodyClass(cssClass) {
@@ -80,6 +81,14 @@ function _buildANode(urls, labels, i) {
 function _addLinkToNavigation(nav, div, a) {
     div.appendChild(a);
     nav.appendChild(div);
+}
+function _checkIfProvidedParameterIsCorrect(urls, labels, id) {
+    if (!urls || typeof urls !== "object" || !labels || typeof labels !== "object" || !id || typeof 
+    id !== "string") {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 export {
