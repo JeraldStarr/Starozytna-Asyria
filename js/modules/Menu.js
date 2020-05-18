@@ -46,17 +46,17 @@ function coverSite() {
     const button = document.querySelector("#menu button");
     button.addEventListener("click", _handleClickMobileMenuButton);
     const cover = document.querySelector("#cover");
-    cover.addEventListener("click", (e)=> {
-        console.log(e.target);
-        if (document.body.classList.contains("cover")) {
-            document.body.classList.remove("cover");
-        }
-    })  
+    cover.addEventListener("click", _handleClickCoverElement)  
 }
 function _handleClickMobileMenuButton(e) {
     _setClassForBody("cover");
     if (!_hasBodyClass("cover")) {
             _blurElement("#menu button");
+    }
+}
+function _handleClickCoverElement() {
+    if (document.body.classList.contains("cover")) {
+        document.body.classList.remove("cover");
     }
 }
 function _setClassForBody(cssClass) {
