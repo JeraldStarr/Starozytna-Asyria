@@ -100,14 +100,18 @@
         flex-direction: column;
         justify-content: space-between;
         top: 260px;
+        left: 0;
         width: 100%;
         height: 279px;
+        transition: .2s;
         background-image: linear-gradient(to right, #3b3434 0%, lightgray 33%, lightgray 66%, #000 100%);
-
     }
 
     #mobileMenu {
-        display: none;
+        position: absolute;
+        left: -400px;
+        z-index: 100;
+        transition: .2s;
     }
 
     #mobileMenu button:focus {
