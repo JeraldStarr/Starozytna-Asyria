@@ -47,9 +47,11 @@ function buildHTMLForMobileMenu(urls, labels) {
 }
 function coverSite() {
     const button = document.querySelector("#menu button");
-    button.addEventListener("click", _handleClickMobileMenuButton);
-    const cover = document.querySelector("#cover");
-    cover.addEventListener("click", _handleClickCoverElement)  
+    if (button) {
+        button.addEventListener("click", _handleClickMobileMenuButton);
+        const cover = document.querySelector("#cover");
+        cover.addEventListener("click", _handleClickCoverElement) 
+    } 
 }
 function _handleClickMobileMenuButton() {
     _toogleClassForBody("cover");
