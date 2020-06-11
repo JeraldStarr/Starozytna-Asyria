@@ -14,7 +14,7 @@ export const dataBase = {
             "asyryjska-architektura.html",
             "asyryjska-sztuka.html",
             "asyryjskie-miasta.html",
-            "historia-asyrii.html",
+            "articles/historia-asyrii.html",
             "asyryjscy-bogowie.html",
             "asyryjskie-pismiennictwo.html"
         ],
