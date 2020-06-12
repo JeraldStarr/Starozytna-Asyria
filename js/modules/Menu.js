@@ -9,7 +9,7 @@ function fillNavigationWithElements(urls, labels, id) {
     for (let i = 0; i < navLength; i++) {
 
         const aElement = _buildANode(urls, labels, i);
-        const navSubElement = document.createElement("div");
+        const navSubElement = document.createElement("li");
         _addLinkToNavigation(navElement, navSubElement, aElement);
 
         if (id === "menu") {
@@ -44,6 +44,17 @@ function buildHTMLForMobileMenu(urls, labels) {
         }
         document.body.appendChild(nav);
     }
+}
+function buildSubmenu() {
+    const menu = document.getElementsByClassName("option");
+    [...menu].forEach(menuElement => {
+        if (menuElement.innerText === "Historia") {
+            const div = document.createElement("div");
+            div.classList.add("submenu-1");         
+            menuElement.appendChild(div);
+            _buildListForSubmenu(div);
+        }
+    });
 }
 function coverSite() {
     const button = document.querySelector("#menu button");
@@ -92,10 +103,23 @@ function _checkIfProvidedParameterIsCorrect(urls, labels, id) {
         return false;
     }
 }
+function _buildListForSubmenu(parent) {
+    const list = document.createElement("ul");
+    for (let i = 0; i < 5; i++) {
+        const listElem = document.createElement("li");
+        const a = document.createElement("a");
+        a.setAttribute("href", "#");
+        a.innerText = "Okres średnioasyryjski";
+        listElem.appendChild(a);
+        list.appendChild(listElem);
+    }
+    parent.appendChild(list);
+}
 
 export {
         fillNavigationWithElements, 
         createHamburgerButtonInMenu, 
         buildHTMLForMobileMenu,
+        buildSubmenu,
         coverSite
     };
