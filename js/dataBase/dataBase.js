@@ -30,5 +30,23 @@ export const dataBase = {
             "kontakt.html",
             "http://net3.pl/uslugi/ksiega.php?p_user=sitnikl1&p_nrksiegi=1"
         ]
+    },
+    submenu: {
+        historia: {
+            labels: [
+                "Okres przedasyryjski",
+                "Okres staroasyryjski",
+                "Okres wasalizacji",
+                "Okres średnioasyryjski",
+                "Okres nowoasyryjski"
+            ],
+            urls: [
+                "/articles/historia/okres-przedasyryjski.html",
+                "/articles/historia/okres-staroasyryjski.html",
+                "/articles/historia/okres-wasalizacji.html",
+                "/articles/historia/okres-srednioasyryjski.html",
+                "/articles/historia/okres-nowoasyryjski.html"
+            ]
+        }
     }
 }

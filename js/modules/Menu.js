@@ -45,14 +45,14 @@ function buildHTMLForMobileMenu(urls, labels) {
         document.body.appendChild(nav);
     }
 }
-function buildSubmenu() {
+function buildSubmenu(submenu) {
     const menu = document.getElementsByClassName("option");
     [...menu].forEach(menuElement => {
         if (menuElement.innerText === "Historia") {
             const div = document.createElement("div");
             div.classList.add("submenu-1");         
             menuElement.appendChild(div);
-            _buildListForSubmenu(div);
+            _buildListForSubmenu(div, submenu);
         }
     });
 }
@@ -103,13 +103,13 @@ function _checkIfProvidedParameterIsCorrect(urls, labels, id) {
         return false;
     }
 }
-function _buildListForSubmenu(parent) {
+function _buildListForSubmenu(parent, submenu) {
     const list = document.createElement("ul");
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < submenu.historia.labels.length; i++) {
         const listElem = document.createElement("li");
         const a = document.createElement("a");
-        a.setAttribute("href", "#");
-        a.innerText = "Okres średnioasyryjski";
+        a.setAttribute("href", submenu.historia.urls[i]);
+        a.innerText = submenu.historia.labels[i];
         listElem.appendChild(a);
         list.appendChild(listElem);
     }

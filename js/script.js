@@ -8,6 +8,6 @@ import {fillNavigationWithElements, createHamburgerButtonInMenu, buildHTMLForMob
         data.menu.footerElementInnerHTML, "bottom");
     createHamburgerButtonInMenu();
     buildHTMLForMobileMenu(data.menu.menuUrls, data.menu.innerHTML);
-    buildSubmenu();
+    buildSubmenu(data.submenu);
     coverSite();
 }());

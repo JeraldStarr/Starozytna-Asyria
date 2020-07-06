@@ -49,7 +49,7 @@
 
 .submenu-1 {
     display: none;
-    width: 190px;
+    min-width: 160px;
 }
 .submenu-1 ul {
     padding: 0;
@@ -59,8 +59,8 @@
 }
 .submenu-1 li {
     list-style-type: none;
-    text-align: center;
-    padding: 5px;
+    text-align: left;
+    padding: 10px;
 }
 
 #menu li:hover .submenu-1 {
