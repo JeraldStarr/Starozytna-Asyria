@@ -11,12 +11,12 @@ export const dataBase = {
         ],
         menuUrls: [
             "/",
-            "asyryjska-architektura.html",
-            "asyryjska-sztuka.html",
-            "asyryjskie-miasta.html",
+            "/asyryjska-architektura.html",
+            "/asyryjska-sztuka.html",
+            "/asyryjskie-miasta.html",
             "/articles/historia-asyrii.html",
-            "asyryjscy-bogowie.html",
-            "asyryjskie-pismiennictwo.html"
+            "/asyryjscy-bogowie.html",
+            "/asyryjskie-pismiennictwo.html"
         ],
         footerElementInnerHTML: [
             "mapa strony",
