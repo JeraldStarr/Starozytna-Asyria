@@ -132,6 +132,15 @@
         background-image: linear-gradient(to right, #3b3434 0%, lightgray 33%, lightgray 66%, #000 100%);
     }
 
+    .cover #menu button {
+        transform: rotate(45deg) translateY(5px);
+        border: none;
+    }
+    
+    .cover #menu button::after {
+        transform: rotate(-90deg) translate(-10px);
+    }
+
     #mobileMenu {
         position: absolute;
         left: -400px;
@@ -151,10 +160,25 @@
     }
     #mobileMenu a {
         display: block;
+        position: relative;
         color: lightgray;
         text-decoration: none;
         width: 100%;
         text-align: center;
+    }
+
+    #mobileMenu.mobileMenu--historia {
+        height: 199px;
+    }
+
+    .mobileArrow {
+        position: absolute;
+        right: 40px;
+        bottom: -9px;
+        width: 70px;
+        height: 38px;
+        line-height: 38px;
+        background-color: transparent;
     }
 
     .cover #cover {

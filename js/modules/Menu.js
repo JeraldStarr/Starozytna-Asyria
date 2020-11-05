@@ -1,3 +1,4 @@
+import {dataBase as data} from "../dataBase/dataBase.js";
 function fillNavigationWithElements(urls, labels, id) {
     const atLeastOneParameterIsNotCorrect = _checkIfProvidedParameterIsCorrect(urls, labels, id);
     if (atLeastOneParameterIsNotCorrect) {
@@ -30,6 +31,9 @@ function buildHTMLForMobileMenu(urls, labels) {
     if (atLeastOneParameterIsNotCorrect) {
         return null;
     }
+    if (document.querySelector("#mobileMenu")) {
+        document.querySelector("#mobileMenu").outerHTML = "";
+    }
     if (window.innerWidth <= 700) {
         const nav = document.createElement("nav");
         nav.id = "mobileMenu";
@@ -39,13 +43,19 @@ function buildHTMLForMobileMenu(urls, labels) {
             const a = document.createElement("a");
             a.setAttribute("href", urls[i]);
             a.innerText = labels[i];
+            if (labels[i] === "Historia") {
+                const arrow = document.createElement("span");
+                a.appendChild(arrow);
+                arrow.outerHTML = `<span class="mobileArrow" style="color: white">></span>`;
+            }
             li.appendChild(a);
             nav.appendChild(li);
         }
         document.body.appendChild(nav);
+        buildSubmenuForMobile();
     }
 }
-function buildSubmenu(submenu) {
+function buildSubmenuForDesktop(submenu) {
     const menu = document.getElementsByClassName("option");
     [...menu].forEach(menuElement => {
         if (menuElement.innerText === "Historia") {
@@ -55,6 +65,16 @@ function buildSubmenu(submenu) {
             _buildListForSubmenu(div, submenu);
         }
     });
+}
+function buildSubmenuForMobile() {
+    if (!document.querySelector(".mobileArrow")) {
+        return;
+    }
+    document.querySelector(".mobileArrow").addEventListener("click", (e) => {
+        e.preventDefault();
+        buildHTMLForMobileMenu(data.submenu.historia.urls, data.submenu.historia.labels);
+        document.querySelector("#mobileMenu").classList.add("mobileMenu--historia");
+    })
 }
 function coverSite() {
     const button = document.querySelector("#menu button");
@@ -120,6 +140,7 @@ export {
         fillNavigationWithElements, 
         createHamburgerButtonInMenu, 
         buildHTMLForMobileMenu,
-        buildSubmenu,
+        buildSubmenuForDesktop,
+        buildSubmenuForMobile,
         coverSite
     };

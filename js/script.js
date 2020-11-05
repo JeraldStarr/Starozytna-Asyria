@@ -1,6 +1,6 @@
 import {dataBase as data} from "./dataBase/dataBase.js";
-import {fillNavigationWithElements, createHamburgerButtonInMenu, buildHTMLForMobileMenu, buildSubmenu,
-     coverSite} from "./modules/Menu.js";
+import {fillNavigationWithElements, createHamburgerButtonInMenu, buildHTMLForMobileMenu, 
+    buildSubmenuForDesktop, coverSite} from "./modules/Menu.js";
 
 (function() {
     fillNavigationWithElements(data.menu.menuUrls, data.menu.innerHTML, "menu");
@@ -8,6 +8,6 @@ import {fillNavigationWithElements, createHamburgerButtonInMenu, buildHTMLForMob
         data.menu.footerElementInnerHTML, "bottom");
     createHamburgerButtonInMenu();
     buildHTMLForMobileMenu(data.menu.menuUrls, data.menu.innerHTML);
-    buildSubmenu(data.submenu);
+    buildSubmenuForDesktop(data.submenu);
     coverSite();
 }());
