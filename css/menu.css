@@ -94,6 +94,7 @@
         transition: 0.3s transform linear; 
         z-index: 2;
         outline: none;
+        cursor: pointer;
     }
 
     #menu button::after, #menu button::before {
@@ -172,14 +173,26 @@
         height: 199px;
     }
 
+    .returnBtn {
+        color: lightgray;
+        font-size: 70px;
+        position: absolute;
+        top: 480px;
+        left: 13px;
+        cursor: pointer;
+    }
+
     .mobileArrow {
         position: absolute;
-        right: 40px;
+        right: 3px;
         bottom: -9px;
         width: 70px;
         height: 38px;
         line-height: 38px;
         background-color: transparent;
+        color: #3a3936;
+        font-weight: 900;
+        font-size: 30px;
     }
 
     .cover #cover {

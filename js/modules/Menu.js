@@ -46,7 +46,7 @@ function buildHTMLForMobileMenu(urls, labels) {
             if (labels[i] === "Historia") {
                 const arrow = document.createElement("span");
                 a.appendChild(arrow);
-                arrow.outerHTML = `<span class="mobileArrow" style="color: white">></span>`;
+                arrow.outerHTML = `<span class="mobileArrow" style="color: #3b3a37">></span>`;
             }
             li.appendChild(a);
             nav.appendChild(li);
@@ -74,7 +74,24 @@ function buildSubmenuForMobile() {
         e.preventDefault();
         buildHTMLForMobileMenu(data.submenu.historia.urls, data.submenu.historia.labels);
         document.querySelector("#mobileMenu").classList.add("mobileMenu--historia");
+
+        buildReturnBtn();
     })
+}
+function buildReturnBtn() {
+    const returnBtn = document.createElement("div");
+    returnBtn.classList.add("returnBtn");
+    returnBtn.innerText = "<";
+    document.body.appendChild(returnBtn);
+
+    setListenerForReturnBtn();
+}
+function setListenerForReturnBtn() {
+    const returnBtn = document.querySelector(".returnBtn");
+    returnBtn.addEventListener("click", () => {
+        buildHTMLForMobileMenu(data.menu.menuUrls, data.menu.innerHTML);
+        document.body.removeChild(returnBtn);
+    });
 }
 function coverSite() {
     const button = document.querySelector("#menu button");
@@ -88,6 +105,8 @@ function _handleClickMobileMenuButton() {
     _toogleClassForBody("cover");
     if (!_hasBodyClass("cover")) {
             _blurElement("#menu button");
+            buildHTMLForMobileMenu(data.menu.menuUrls, data.menu.innerHTML);
+            document.body.removeChild(document.querySelector(".returnBtn"));
     }
 }
 function _handleClickCoverElement() {
