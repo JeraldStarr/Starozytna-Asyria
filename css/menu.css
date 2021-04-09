@@ -93,6 +93,7 @@
         position: relative;
         transition: 0.3s transform linear; 
         z-index: 2;
+        outline: none;
     }
 
     #menu button::after, #menu button::before {
