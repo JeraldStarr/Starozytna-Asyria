@@ -36,16 +36,12 @@ export const dataBase = {
             labels: [
                 "Okres przedasyryjski",
                 "Okres staroasyryjski",
-                "Okres wasalizacji",
                 "Okres średnioasyryjski",
-                "Okres nowoasyryjski"
             ],
             urls: [
                 "/articles/historia/okres-przedasyryjski.html",
                 "/articles/historia/okres-staroasyryjski.html",
-                "/articles/historia/okres-wasalizacji.html",
                 "/articles/historia/okres-srednioasyryjski.html",
-                "/articles/historia/okres-nowoasyryjski.html"
             ]
         }
     }
