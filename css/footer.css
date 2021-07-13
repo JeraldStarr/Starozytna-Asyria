@@ -9,6 +9,11 @@
 	margin-left: 10%;
 }
 
+#bottom li {
+	list-style-type: none;
+	padding-left: 30px;
+}
+
 /*blok na dole artykulu, w ktorym zawarte sa inforamcje o zrodlach oraz 
 dacie utworzenia, a także dacie ostatniej aktualizacji*/
 .datyZrodla {

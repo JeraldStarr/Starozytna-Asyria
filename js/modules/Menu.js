@@ -1,3 +1,4 @@
+import {dataBase as data} from "../dataBase/dataBase.js";
 function fillNavigationWithElements(urls, labels, id) {
     const atLeastOneParameterIsNotCorrect = _checkIfProvidedParameterIsCorrect(urls, labels, id);
     if (atLeastOneParameterIsNotCorrect) {
@@ -9,7 +10,7 @@ function fillNavigationWithElements(urls, labels, id) {
     for (let i = 0; i < navLength; i++) {
 
         const aElement = _buildANode(urls, labels, i);
-        const navSubElement = document.createElement("div");
+        const navSubElement = document.createElement("li");
         _addLinkToNavigation(navElement, navSubElement, aElement);
 
         if (id === "menu") {
@@ -30,6 +31,9 @@ function buildHTMLForMobileMenu(urls, labels) {
     if (atLeastOneParameterIsNotCorrect) {
         return null;
     }
+    if (document.querySelector("#mobileMenu")) {
+        document.querySelector("#mobileMenu").outerHTML = "";
+    }
     if (window.innerWidth <= 700) {
         const nav = document.createElement("nav");
         nav.id = "mobileMenu";
@@ -39,11 +43,55 @@ function buildHTMLForMobileMenu(urls, labels) {
             const a = document.createElement("a");
             a.setAttribute("href", urls[i]);
             a.innerText = labels[i];
+            if (labels[i] === "Historia") {
+                const arrow = document.createElement("span");
+                a.appendChild(arrow);
+                arrow.outerHTML = `<span class="mobileArrow" style="color: #3b3a37">></span>`;
+            }
             li.appendChild(a);
             nav.appendChild(li);
         }
         document.body.appendChild(nav);
+        buildSubmenuForMobile();
     }
+}
+function buildSubmenuForDesktop(submenu) {
+    const menu = document.getElementsByClassName("option");
+    [...menu].forEach(menuElement => {
+        if (menuElement.innerText === "Historia") {
+            const div = document.createElement("div");
+            div.classList.add("submenu-1");         
+            menuElement.appendChild(div);
+            _buildListForSubmenu(div, submenu);
+        }
+    });
+}
+function buildSubmenuForMobile() {
+    if (!document.querySelector(".mobileArrow")) {
+        return;
+    }
+    document.querySelector(".mobileArrow").addEventListener("click", (e) => {
+        e.preventDefault();
+        buildHTMLForMobileMenu(data.submenu.historia.urls, data.submenu.historia.labels);
+        document.querySelector("#mobileMenu").classList.add("mobileMenu--historia");
+
+        buildReturnBtn();
+    })
+}
+function buildReturnBtn() {
+    const returnBtn = document.createElement("div");
+    returnBtn.classList.add("returnBtn");
+    returnBtn.innerText = "<";
+    document.body.appendChild(returnBtn);
+
+    setListenerForReturnBtn();
+}
+function setListenerForReturnBtn() {
+    const returnBtn = document.querySelector(".returnBtn");
+    returnBtn.addEventListener("click", () => {
+        buildHTMLForMobileMenu(data.menu.menuUrls, data.menu.innerHTML);
+        document.body.removeChild(returnBtn);
+    });
 }
 function coverSite() {
     const button = document.querySelector("#menu button");
@@ -57,6 +105,8 @@ function _handleClickMobileMenuButton() {
     _toogleClassForBody("cover");
     if (!_hasBodyClass("cover")) {
             _blurElement("#menu button");
+            buildHTMLForMobileMenu(data.menu.menuUrls, data.menu.innerHTML);
+            document.body.removeChild(document.querySelector(".returnBtn"));
     }
 }
 function _handleClickCoverElement() {
@@ -92,11 +142,25 @@ function _checkIfProvidedParameterIsCorrect(urls, labels, id) {
         return false;
     }
 }
+function _buildListForSubmenu(parent, submenu) {
+    const list = document.createElement("ul");
+    for (let i = 0; i < submenu.historia.labels.length; i++) {
+        const listElem = document.createElement("li");
+        const a = document.createElement("a");
+        a.setAttribute("href", submenu.historia.urls[i]);
+        a.innerText = submenu.historia.labels[i];
+        listElem.appendChild(a);
+        list.appendChild(listElem);
+    }
+    parent.appendChild(list);
+}
 
 export {
         fillNavigationWithElements, 
         createHamburgerButtonInMenu, 
         buildHTMLForMobileMenu,
+        buildSubmenuForDesktop,
+        buildSubmenuForMobile,
         coverSite
     };
 

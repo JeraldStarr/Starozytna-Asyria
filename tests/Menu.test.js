@@ -92,7 +92,7 @@ describe("Menu module: ", () => {
             document.body.innerHTML = `<footer id="bottom"></footer>`
             fillNavigationWithElements(data.menu.footerLinks, 
                 data.menu.footerElementInnerHTML, "bottom");
-            expect(document.querySelectorAll("#bottom div").length)
+            expect(document.querySelectorAll("#bottom li").length)
                 .toBe(4);
 
         })
