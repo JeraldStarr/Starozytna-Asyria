@@ -1,8 +1,9 @@
-import {dataBase as data} from "./dataBase/dataBase.js";
-import {fillNavigationWithElements, createHamburgerButtonInMenu, buildHTMLForMobileMenu, 
-    buildSubmenuForDesktop, coverSite} from "./modules/Menu.js";
-import {handlePictures} from "./modules/Gallery.js";
+import { dataBase as data } from "./dataBase/dataBase.js";
+import { fillNavigationWithElements, createHamburgerButtonInMenu, buildHTMLForMobileMenu, 
+    buildSubmenuForDesktop, coverSite } from "./modules/Menu.js";
+import { handlePictures } from "./modules/Gallery.js";
 import { handleTooltip } from "./modules/ToolTip.js";
+import { track } from "./modules/Track.js";
 
 
 (function() {
@@ -15,4 +16,5 @@ import { handleTooltip } from "./modules/ToolTip.js";
     coverSite();
     handlePictures();
     handleTooltip();
+    track();
 }());
