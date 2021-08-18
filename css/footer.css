@@ -42,12 +42,6 @@ dacie utworzenia, a także dacie ostatniej aktualizacji*/
 	max-width: 10%;
 }
 
-address {
-	font-size: 10px;
-	text-align: center;
-	padding: 25px;
-}
-
 @media (min-width: 481px) and (max-width: 700px) {	
 	#bottom div {
 		margin-left: 4%;

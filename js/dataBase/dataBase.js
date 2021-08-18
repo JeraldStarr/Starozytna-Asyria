@@ -11,12 +11,12 @@ export const dataBase = {
         ],
         menuUrls: [
             "/",
-            "/asyryjska-architektura.html",
-            "/asyryjska-sztuka.html",
-            "/asyryjskie-miasta.html",
+            "/articles/asyryjska-architektura.html",
+            "/articles/asyryjska-sztuka.html",
+            "/articles/asyryjskie-miasta.html",
             "/articles/historia-asyrii.html",
-            "/asyryjscy-bogowie.html",
-            "/asyryjskie-pismiennictwo.html"
+            "/articles/asyryjscy-bogowie.html",
+            "/articles/asyryjskie-pismiennictwo.html"
         ],
         footerElementInnerHTML: [
             "mapa strony",
@@ -25,9 +25,9 @@ export const dataBase = {
             "księga gości"
         ],
         footerLinks: [
-            "mapa-strony.html",
-            "linki.html",
-            "kontakt.html",
+            "/articles/mapa-strony.html",
+            "/articles/linki.html",
+            "/articles/kontakt.html",
             "http://net3.pl/uslugi/ksiega.php?p_user=sitnikl1&p_nrksiegi=1"
         ]
     },
