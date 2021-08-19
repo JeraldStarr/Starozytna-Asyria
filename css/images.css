@@ -2,7 +2,7 @@ figure {
 	border: 3px solid white;
 	padding: 10px;
 	margin: 5px 0 5px 3%;
-	transition: box-shadow .8s ease-in-out 10ms, border .8s ease-in-out 10ms;
+	transition: box-shadow .4s ease-in-out 10ms, border .4s ease-in-out 10ms;
 }
 
 .standard {
@@ -19,8 +19,6 @@ figure {
 
 figure:hover {
 	border: 3px solid brown;
-	box-shadow: -1px -1px 128px 3px brown,
-					    -1px -1px 214px -33px white;
 }
 
 figure img {

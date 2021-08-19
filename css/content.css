@@ -6,12 +6,6 @@
     transition: box-shadow .8s ease-in-out 10ms, border .8s ease-in-out 10ms;
 }
 
-.articleContent:hover {
-    border: 2px solid #f4ce42;
-    box-shadow: -1px -1px 128px 3px #f4ce42,
-                        -1px -1px 214px -33px white;
-}
-
 .articleContent a {
     color: black;
 }
