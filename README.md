@@ -25,4 +25,4 @@ To compile in this project use: <code>sass --watch scss:css</code>
 The project has tests created with Jest. To run them use <code>npx jest</code> or <code>npm run test</code>
 
 # Open website
-[https://www.mat-assur.edu.pl](https://www.mat-assur.edu.pl)
+[http://www.mat-assur.edu.pl](http://www.mat-assur.edu.pl)
