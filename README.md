@@ -21,4 +21,7 @@ Mouse
 Node Sass npm package is using for compiling Sass to CSS: [https://www.npmjs.com/package/node-sass](https://www.npmjs.com/package/node-sass).
 To compile in this project use: <code>sass --watch scss:css</code>
 
+# Unit tests
+The project has tests created with Jest. To run them use <code>npx jest</code> or <code>npm run test</code>
+
 
