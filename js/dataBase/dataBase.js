@@ -34,7 +34,7 @@ export const dataBase = {
     submenu: {
         historia: {
             labels: [
-                "Okres przedasyryjski",
+                "Przed powstaniem Asyrii",
                 "Okres staroasyryjski",
                 "Okres średnioasyryjski",
             ],

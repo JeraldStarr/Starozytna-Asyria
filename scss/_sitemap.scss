@@ -1,0 +1,43 @@
+.sitemap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__item {
+        display: flex;
+        text-decoration: none;
+        font-size: 20px;
+        color: #999!important;
+        position: relative;
+        &:hover {
+            color: #ccc!important;
+            &::before {
+                background-color: orange;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: red;
+        }
+        &--subitem {
+            margin-left: 30px;
+            &:hover {
+                &::before {
+                    background-color: rgb(202, 245, 138)!important;
+                }
+            }
+            &::before {
+                background-color: greenyellow;
+            }
+        }
+    }
+}
